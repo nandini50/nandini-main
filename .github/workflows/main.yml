@@ -1,0 +1,54 @@
+name: Python Workflow
+ 
+on:
+ 
+ push:
+ 
+  branches:
+ 
+    - main # or whichever branch you want to trigger the action on
+ 
+jobs:
+ 
+ run_python_program:
+ 
+  runs-on: ubuntu-latest
+ 
+  env:
+    Name: "Nandini"
+ 
+  steps:
+  - name: My Name
+    run: echo ${{env.Name}}
+ 
+  - name: Checkout repository
+ 
+    uses: actions/checkout@v2
+ 
+  # - name: Set up Python
+ 
+  #   uses: actions/setup-python@v2
+ 
+  #   with:
+  #     python-version: '3.11'
+ 
+  - name: Run Python program
+ 
+    run: python index.py # Replace my_program.py with the name of your Python program
+ 
+# Runs a single command using the runners shell I
+ 
+  - name: Run a one-line script
+ 
+    run: echo Hello, world!
+ 
+#Runs a set of commands using the runners shell
+ 
+  - name: Run a multi-line script
+ 
+    run: |
+ 
+     echo Add other actions to build,
+     
+     echo test, and deploy your project.
+ 
